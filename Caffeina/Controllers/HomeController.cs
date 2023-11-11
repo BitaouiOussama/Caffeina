@@ -13,6 +13,7 @@ namespace Caffeina.Controllers
             _logger = logger;
         }
 
+        
         public IActionResult Index()
         {
             return View();
@@ -34,6 +35,32 @@ namespace Caffeina.Controllers
         {
             return View();
         }
+
+        [Route("/Menu")]
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
+        [Route("/Services")]
+        public IActionResult Services()
+        {
+            return View();
+        }
+
+        [Route("/Commande")]
+        public IActionResult Commande()
+        {
+            return View();
+        }
+
+
+        [Route("/Avis")]
+        public IActionResult Avis()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
