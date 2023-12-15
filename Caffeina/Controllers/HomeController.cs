@@ -19,7 +19,7 @@ namespace Caffeina.Controllers
             return View();
         }
 
-        [Route("/Contact")]
+        [Route("/contact")]
         public IActionResult Contact()
         {
             return View();
@@ -30,32 +30,37 @@ namespace Caffeina.Controllers
             return View();
         }
 
-        [Route("/About")]
+        [Route("/about")]
         public IActionResult About()
         {
             return View();
         }
 
-        [Route("/Menu")]
-        public IActionResult Menu()
+        [Route("/pr")]
+        public IActionResult Produit()
+        {
+            return View();
+        }
+        [Route("/produit")]
+        public IActionResult Categorie()
         {
             return View();
         }
 
-        [Route("/Services")]
+        [Route("/services")]
         public IActionResult Services()
         {
             return View();
         }
 
-        [Route("/Commande")]
+        [Route("/commande")]
         public IActionResult Commande()
         {
             return View();
         }
 
 
-        [Route("/Avis")]
+        [Route("/avis")]
         public IActionResult Avis()
         {
             return View();
