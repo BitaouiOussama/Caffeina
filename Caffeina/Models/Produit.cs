@@ -1,0 +1,41 @@
+﻿using System;
+namespace Caffeina.Models
+{
+	public class Produit
+	{
+		public Produit()
+		{
+		}
+
+		public int IdProd
+		{
+			get;
+			set;
+		}
+
+		public string Labelle
+		{
+			get;
+			set;
+		}
+
+		public double Prix
+		{
+			get;
+			set;
+		}
+
+		public int IdCateg
+		{
+			get;
+			set;
+		}
+
+		public DateTime DateAjout
+		{
+			get;
+			set;
+		}
+	}
+}
+
