@@ -1,0 +1,73 @@
+﻿@model Caffeina.Models.Categorie;
+@{
+    Layout = "_layoutadmine";
+}
+
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Ajouter - Catégorie</h1>
+
+    </div>
+    <form method="post" asp-action="AjouterCategorie">
+
+
+        <div class="form-group ">
+            <label class="form-label mt-4">Id Catégorie </label>
+            <input class="form-control" asp-for="IdCateg">
+        </div>
+        <div class="form-group">
+            <label class="form-label mt-4">Designation</label>
+            <input class="form-control" asp-for="Designation">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label mt-4">Date d'ajout</label>
+            <input class="form-control" asp-for="DateAjout">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+
+</div>
+
+
+
+@*
+<div class="container-fluid">
+<form method="post" asp-action="AjouterProduit">
+
+
+        <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Id Produit</label>
+            <div class="col-sm-10">
+                <input  readonly class="form-control" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label  class="form-label mt-4">Labelle</label>
+            <input  class="form-control" >
+        </div>
+
+        <div class="form-group">
+            <label  class="form-label mt-4">Prix</label>
+            <input class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label  class="form-label mt-4">Id Categorie</label>
+            <select class="form-select" >
+                <option></option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label  class="form-label mt-4">Date d'ajout</label>
+            <input class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>
+</div>
+ *@

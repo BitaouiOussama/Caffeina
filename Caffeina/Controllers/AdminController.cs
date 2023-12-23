@@ -15,6 +15,26 @@ namespace Caffeina.Controllers
         {
             return View();
         }
+
+        public IActionResult AjouterProduit()
+        {
+            return View();
+        }
+
+        public IActionResult ListeProduits()
+        {
+            return View();
+        }
+
+        public IActionResult AjouterCategorie()
+        {
+            return View();
+        }
+
+        public IActionResult ListeCategorie()
+        {
+            return View();
+        }
     }
 }
 

@@ -69,8 +69,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Gestion</h6>
-                        <a class="collapse-item" href="buttons.html">Ajouter</a>
-                        <a class="collapse-item" href="cards.html">Voir</a>
+                        <a class="collapse-item"  asp-action="AjouterProduit" asp-controller="Admin">Ajouter</a>
+                        <a class="collapse-item" asp-action="ListeProduits" asp-controller="Admin">Voir</a>
                     </div>
                 </div>
             </li>
@@ -86,8 +86,8 @@
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Gestion</h6>
-                        <a class="collapse-item" href="utilities-color.html">Ajouter</a>
-                        <a class="collapse-item" href="utilities-border.html">Voir</a>
+                        <a class="collapse-item" asp-action="AjouterCategorie" asp-controller="Admin">Ajouter</a>
+                        <a class="collapse-item" asp-action="ListeCategorie" asp-controller="Admin">Voir</a>
                     </div>
                 </div>
             </li>
