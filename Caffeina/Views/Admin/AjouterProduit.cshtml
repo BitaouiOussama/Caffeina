@@ -1,4 +1,4 @@
-﻿
+﻿@model Caffeina.Models.Produit
 @{
     Layout = "_layoutadmine";
 }
@@ -14,21 +14,21 @@
 
         <div class="form-group ">
             <label class="form-label mt-4" >Id Produit</label>
-                <input  class="form-control">
+                <input  class="form-control" asp-for="IdProd">
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Labelle</label>
-            <input class="form-control">
+            <input class="form-control" asp-for="Labelle">
         </div>
 
         <div class="form-group">
             <label class="form-label mt-4">Prix</label>
-            <input class="form-control">
+            <input class="form-control" asp-for="Prix">
         </div>
 
         <div class="form-group">
             <label class="form-label mt-4">Id Categorie</label>
-            <select class="form-select">
+            <select class="form-select" asp-for="IdCateg">
                 <option></option>
             </select>
         </div>
@@ -36,7 +36,7 @@
 
         <div class="form-group">
             <label class="form-label mt-4">Date d'ajout</label>
-            <input class="form-control">
+            <input class="form-control" asp-for="DateAjout">
         </div>
 
         <button type="submit" class="btn btn-primary">Ajouter</button>
