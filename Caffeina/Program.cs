@@ -1,7 +1,14 @@
+using Caffeina.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DataDbContext>(
+    option => option.UseSqlServer(builder.Configuration.GetConnectionString("Caffeina_Con"))
+    );
 
 var app = builder.Build();
 

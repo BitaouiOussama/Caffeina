@@ -1,10 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Caffeina.Models
 {
 	public class Produit
 	{
 		public Produit(){}
 
+		[Key]
 		public int IdProd{ get; set; }
 
 		public string Labelle{ get; set; }
