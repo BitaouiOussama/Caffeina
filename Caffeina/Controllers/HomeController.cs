@@ -66,7 +66,7 @@ namespace Caffeina.Controllers
             return View();
         }
 
-                [Route("/Dashboard")]
+        [Route("/Dashboard")]
         public IActionResult Dashboard()
         {
             return View();

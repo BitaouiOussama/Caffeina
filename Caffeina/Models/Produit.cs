@@ -3,39 +3,19 @@ namespace Caffeina.Models
 {
 	public class Produit
 	{
-		public Produit()
-		{
-		}
+		public Produit(){}
 
-		public int IdProd
-		{
-			get;
-			set;
-		}
+		public int IdProd{ get; set; }
 
-		public string Labelle
-		{
-			get;
-			set;
-		}
+		public string Labelle{ get; set; }
 
-		public double Prix
-		{
-			get;
-			set;
-		}
+		public double Prix{ get; set; }
 
-		public int IdCateg
-		{
-			get;
-			set;
-		}
+		public int IdCateg{ get; set; }
 
-		public DateTime DateAjout
-		{
-			get;
-			set;
-		}
+		public string ImageSource { get; set; }
+
+        public DateTime DateAjout { get; set; }
 	}
 }
 

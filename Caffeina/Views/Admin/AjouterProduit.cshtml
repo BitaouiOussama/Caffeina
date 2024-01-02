@@ -1,86 +1,85 @@
 ﻿@model Caffeina.Models.Produit
 @{
+    ViewData["Title"] = "Ajouter produit";
     Layout = "_layoutadmine";
 }
 
-<div class="container-fluid">
+<div id="wrapper">
 
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Ajouter - Produit</h1>
-       
-    </div>
-    <form method="post" asp-action="AjouterProduit">
+    <!-- Sidebar -->
+    @Html.Partial("_Navbar")
+    <!-- End of Sidebar -->
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
 
+        <!-- Main Content -->
+        <div id="content">
 
-        <div class="form-group ">
-            <label class="form-label mt-4" >Id Produit</label>
-                <input  class="form-control" asp-for="IdProd">
-        </div>
-        <div class="form-group">
-            <label class="form-label mt-4">Labelle</label>
-            <input class="form-control" asp-for="Labelle">
-        </div>
+            <!-- Topbar -->
+            @Html.Partial("_Topbar")
+            <!-- End of Topbar -->
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
 
-        <div class="form-group">
-            <label class="form-label mt-4">Prix</label>
-            <input class="form-control" asp-for="Prix">
-        </div>
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Ajouter - Produit</h1>
 
-        <div class="form-group">
-            <label class="form-label mt-4">Id Categorie</label>
-            <select class="form-select" asp-for="IdCateg">
-                <option></option>
-            </select>
-        </div>
+                </div>
+                <form asp-controller="" asp-action="" method="post">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <!-- Labelle Produit -->
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" asp-for="Labelle">Labelle</label>
+                                <input type="text" id="form6Example1" class="form-control" />
+                            </div>
+                        </div>
+                        <!-- Prix Produit -->
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" asp-for="Prix">Prix</label>
+                                <input type="text" id="form6Example2" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="row mb-4">
+                        <!-- Listes catégorie -->
+                        <div class="col">
+                            <label class="form-label" for="form6Example3">Select catégorie</label>
+                            <select class="form-control">
+                                <option>Categ 1</option>
+                                <option>Categ 2</option>
+                                <option>Categ 3</option>
+                            </select>
+                        </div>
+                        <!-- Images Produit -->
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" asp-for="ImageSource">Image</label>
+                                <input type="file" id="form6Example2" class="form-control-file" />
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            <label class="form-label mt-4">Date d'ajout</label>
-            <input class="form-control" asp-for="DateAjout">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Ajouter</button>
-    </form>
-   
-</div>
-
-
-
-@* 
-<div class="container-fluid">
-<form method="post" asp-action="AjouterProduit">
-  
-        
-        <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Id Produit</label>
-            <div class="col-sm-10">
-                <input  readonly class="form-control" >
+                    
+                    @*<div data-mdb-input-init class="form-outline mb-4">
+                        
+                    </div>*@
+                    <!-- Submit button -->
+                    <button data-mdb-ripple-init type="button" class="btn btn-admin btn-block mb-4">Ajouter</button>
+                </form>
             </div>
-        </div>
-        <div class="form-group">
-            <label  class="form-label mt-4">Labelle</label>
-            <input  class="form-control" >
-        </div>
+            <!-- /.container-fluid -->
 
-        <div class="form-group">
-            <label  class="form-label mt-4">Prix</label>
-            <input class="form-control">
         </div>
+        <!-- End of Main Content -->
+        <!-- Footer -->
+        @Html.Partial("_Footer")
+        <!-- End of Footer -->
 
-        <div class="form-group">
-            <label  class="form-label mt-4">Id Categorie</label>
-            <select class="form-select" >
-                <option></option>
-            </select>
-        </div>
+    </div>
+    <!-- End of Content Wrapper -->
 
-       
-        <div class="form-group">
-            <label  class="form-label mt-4">Date d'ajout</label>
-            <input class="form-control">
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Ajouter</button>
-</form>
 </div>
- *@
