@@ -37,10 +37,6 @@ namespace Caffeina.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageSource")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("IdCateg");
 
                     b.ToTable("categories");
@@ -60,9 +56,9 @@ namespace Caffeina.Migrations
                     b.Property<int>("IdCateg")
                         .HasColumnType("int");
 
-                    b.Property<string>("ImageSource")
+                    b.Property<byte[]>("ImageSource")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Labelle")
                         .IsRequired()

@@ -16,7 +16,6 @@ namespace Caffeina.Migrations
                     IdCateg = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Designation = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageSource = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateAjout = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -33,7 +32,7 @@ namespace Caffeina.Migrations
                     Labelle = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Prix = table.Column<double>(type: "float", nullable: false),
                     IdCateg = table.Column<int>(type: "int", nullable: false),
-                    ImageSource = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageSource = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     DateAjout = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

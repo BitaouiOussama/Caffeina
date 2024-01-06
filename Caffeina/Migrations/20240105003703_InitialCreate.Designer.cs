@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Caffeina.Migrations
 {
     [DbContext(typeof(DataDbContext))]
-    [Migration("20240102124552_InitialCreate")]
+    [Migration("20240105003703_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,10 +39,6 @@ namespace Caffeina.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageSource")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("IdCateg");
 
                     b.ToTable("categories");
@@ -62,9 +58,9 @@ namespace Caffeina.Migrations
                     b.Property<int>("IdCateg")
                         .HasColumnType("int");
 
-                    b.Property<string>("ImageSource")
+                    b.Property<byte[]>("ImageSource")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Labelle")
                         .IsRequired()

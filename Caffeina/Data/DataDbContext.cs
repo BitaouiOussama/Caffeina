@@ -14,10 +14,22 @@ namespace Caffeina.Data
 		
 		}
 
-		/*public static List<Categorie> getListes()
-		{
-			return categories;
+     /*   protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Produit>()
+                .Property(p => p.ImageSource)
+                .HasColumnType("VARBINARY(MAX)");
+
+            // Vous pouvez ajouter d'autres configurations de modèle ici, le cas échéant
+
+            base.OnModelCreating(modelBuilder);
         }*/
-	}
+
+        /*		public static List<Categorie> getListes()
+                {
+                    return categories;
+                }*/
+
+    }
 }
 

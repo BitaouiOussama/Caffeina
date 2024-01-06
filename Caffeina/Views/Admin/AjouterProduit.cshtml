@@ -25,21 +25,32 @@
                     <h1 class="h3 mb-0 text-gray-800">Ajouter - Produit</h1>
 
                 </div>
-                <form asp-controller="" asp-action="" method="post">
+                <form asp-controller="Admin" asp-action="AjouterProduit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <!-- 2 column grid layout with text inputs for the first and last names -->
                     <div class="row mb-4">
                         <!-- Labelle Produit -->
                         <div class="col">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" asp-for="Labelle">Labelle</label>
-                                <input type="text" id="form6Example1" class="form-control" />
+                                <label class="form-label" asp-for="Labelle"></label>
+                                <input  asp-for="Labelle" class="form-control" />
+                                <span asp-validation-for="Labelle" class="text-danger"></span>
                             </div>
                         </div>
                         <!-- Prix Produit -->
                         <div class="col">
                             <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" asp-for="Prix">Prix</label>
-                                <input type="text" id="form6Example2" class="form-control" />
+                                <label class="form-label" asp-for="Prix"></label>
+                                <input  asp-for="Prix" class="form-control" />
+                                <span asp-validation-for="Prix" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <label class="form-label" asp-for="DateAjout"></label>
+                                <input asp-for="DateAjout" class="form-control" />
+                                <span asp-validation-for="DateAjout" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
@@ -47,18 +58,25 @@
                     <div class="row mb-4">
                         <!-- Listes catégorie -->
                         <div class="col">
-                            <label class="form-label" for="form6Example3">Select catégorie</label>
-                            <select class="form-control">
-                                <option>Categ 1</option>
-                                <option>Categ 2</option>
-                                <option>Categ 3</option>
+                            <label class="form-label" asp-for="IdCateg" >Catégorie</label>
+
+                            <select class="form-control" asp-for="IdCateg">
+                                @foreach (Categorie cat in ViewBag.listcateg)
+                                {
+                                    <option>@cat.IdCateg</option>
+                                }
+                                
+                                
                             </select>
+                            <span asp-validation-for="IdCateg" class="text-danger"></span>
                         </div>
+                           
+                    
                         <!-- Images Produit -->
                         <div class="col">
                             <div data-mdb-input-init class="form-outline">
                                 <label class="form-label" asp-for="ImageSource">Image</label>
-                                <input type="file" id="form6Example2" class="form-control-file" />
+                                <input type="file"  asp-for="ImageSource" accept="image/*" class="form-control-file" />
                             </div>
                         </div>
                     </div>
@@ -68,7 +86,7 @@
                         
                     </div>*@
                     <!-- Submit button -->
-                    <button data-mdb-ripple-init type="button" class="btn btn-admin btn-block mb-4">Ajouter</button>
+                    <input type="submit" value="Ajouter" data-mdb-ripple-init class="btn btn-admin btn-block mb-4" />
                 </form>
             </div>
             <!-- /.container-fluid -->

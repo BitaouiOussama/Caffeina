@@ -1,6 +1,6 @@
 ﻿@model Caffeina.Models.Categorie;
 @{
-    ViewData["Title"] = "Ajouter catégorie";
+    ViewData["Title"] = "Modifier catégorie";
     Layout = "_layoutadmine";
 }
 
@@ -22,10 +22,10 @@
             <div class="container-fluid">
 
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Ajouter - Catégorie</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Modifier - Catégorie</h1>
 
                 </div>
-                <form asp-controller="Admin" asp-action="AjouterCategorie">
+                <form asp-controller="Admin" asp-action="ModifierCategorie">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="row mb-4">
                         <!-- Désignation Categories -->
@@ -36,25 +36,25 @@
                                 <span asp-validation-for="Designation" class="text-danger"></span>
                             </div>
                         </div>
-                        
+
                         <!-- Images Produit -->
-                     @*    <div >
-                            <div data-mdb-input-init class="form-outline">
-                                <label class="form-label" asp-for="ImageSource">Image</label>
-                                <input type="file" asp-for="ImageSource" class="form-control-file" />
-                            </div>
+                        @*    <div >
+                        <div data-mdb-input-init class="form-outline">
+                        <label class="form-label" asp-for="ImageSource">Image</label>
+                        <input type="file" asp-for="ImageSource" class="form-control-file" />
                         </div>
- *@
+                        </div>
+                        *@
                         <div class="col">
                             <div data-mdb-input-init class="form-outline">
                                 <label class="form-label" asp-for="DateAjout"></label>
-                                <input  asp-for="DateAjout" class="form-control" />
+                                <input asp-for="DateAjout" class="form-control" />
                                 <span asp-validation-for="DateAjout" class="text-danger"></span>
                             </div>
                         </div>
                     </div>
                     <!-- Submit button -->
-                    <input type="submit" data-mdb-ripple-init value="Ajouter" class="btn btn-admin btn-block mb-4" />
+                    <input type="submit" data-mdb-ripple-init value="Modifier" class="btn btn-admin btn-block mb-4" />
                 </form>
             </div>
             <!-- /.container-fluid -->
@@ -70,11 +70,15 @@
 
 </div>
 
-
+<div>
+    <a asp-action="ListeCategorie">Back to List</a>
+</div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-
+@* @section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} *@

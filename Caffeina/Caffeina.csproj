@@ -9,6 +9,12 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
+    <Compile Remove="Views\MyAdmin\**" />
+    <Content Remove="Views\MyAdmin\**" />
+    <EmbeddedResource Remove="Views\MyAdmin\**" />
+    <None Remove="Views\MyAdmin\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Remove="wwwroot\css\admin\crud.razor" />
   </ItemGroup>
   <ItemGroup>
@@ -26,5 +32,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
   </ItemGroup>
 </Project>

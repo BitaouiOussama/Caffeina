@@ -11,7 +11,7 @@ namespace Caffeina.Models
 
         public string Designation{ get; set; }
 
-        public string ImageSource { get; set; }
+        /*public string ImageSource { get; set; }*/
 
         public DateTime DateAjout { get; set; }
     }

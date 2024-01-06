@@ -1,4 +1,7 @@
-﻿@{
+﻿@model IEnumerable<Caffeina.Models.Categorie>
+
+
+@{
     ViewData["Title"] = "Liste des categories";
     Layout = "_layoutadmine";
 }
@@ -38,16 +41,13 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>@Html.DisplayNameFor(model => model.IdCateg)</th>
+                                        <th>>@Html.DisplayNameFor(model => model.Designation)</th>
+                                        <th>>@Html.DisplayNameFor(model => model.DateAjout)</th>
                                         <th colspan="2">Actions</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
+                               @*  <tfoot>
                                     <tr>
                                         <th>Name</th>
                                         <th>Position</th>
@@ -57,17 +57,24 @@
                                         <th>Salary</th>
                                         <th colspan="2">Actions</th>
                                     </tr>
-                                </tfoot>
+                                </tfoot> *@
                                 <tbody>
+                                    @foreach(var item in Model)
+                                    {
+                                        
+                                    
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
                                         <td>
-                                            <a href="#" class="btn btn-info btn-icon-split">
+                                            @Html.DisplayFor(modelItem => item.IdCateg)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Designation)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DateAjout)
+                                        </td>
+                                        <td>
+                                                <a asp-action="ModifierCategorie" asp-route-id="@item.IdCateg" class="btn btn-info btn-icon-split">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-edit"></i>
                                                 </span>
@@ -75,7 +82,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="#" class="btn btn-danger btn-icon-split">
+                                                <a asp-action="SupprimerCategorie" asp-route-id="@item.IdCateg" class="btn btn-danger btn-icon-split">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-trash"></i>
                                                 </span>
@@ -83,78 +90,7 @@
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>2011/07/25</td>
-                                        <td>$170,750</td>
-                                        <td>
-                                            <a href="#" class="btn btn-info btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-edit"></i>
-                                                </span>
-                                                <span class="text">Modifier</span>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-trash"></i>
-                                                </span>
-                                                <span class="text">supprimer</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>2009/01/12</td>
-                                        <td>$86,000</td>
-                                        <td>
-                                            <a href="#" class="btn btn-info btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-edit"></i>
-                                                </span>
-                                                <span class="text">Modifier</span>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-trash"></i>
-                                                </span>
-                                                <span class="text">supprimer</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cedric Kelly</td>
-                                        <td>Senior Javascript Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>22</td>
-                                        <td>2012/03/29</td>
-                                        <td>$433,060</td>
-                                        <td>
-                                            <a href="#" class="btn btn-info btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-edit"></i>
-                                                </span>
-                                                <span class="text">Modifier</span>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#" class="btn btn-danger btn-icon-split">
-                                                <span class="icon text-white-50">
-                                                    <i class="fas fa-trash"></i>
-                                                </span>
-                                                <span class="text">supprimer</span>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    }
 
                                 </tbody>
                             </table>

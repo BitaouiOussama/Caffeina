@@ -16,7 +16,7 @@ namespace Caffeina.Models
 
 		public int IdCateg{ get; set; }
 
-		public string ImageSource { get; set; }
+		public byte[] ImageSource { get; set; }
 
         public DateTime DateAjout { get; set; }
 	}
