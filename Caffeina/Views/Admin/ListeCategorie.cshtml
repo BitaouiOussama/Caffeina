@@ -1,0 +1,104 @@
+﻿@*model IEnumerable<Caffeina.Models.Categorie>
+
+
+@{
+    ViewData["Title"] = "Liste des categories";
+    Layout = "_layoutadmine";
+}
+
+<div id="wrapper">
+
+     Sidebar 
+    @Html.Partial("_Navbar")
+     End of Sidebar 
+     Content Wrapper 
+    <div id="content-wrapper" class="d-flex flex-column">
+
+         Main Content 
+        <div id="content">
+
+             Topbar 
+            @Html.Partial("_Topbar")
+             End of Topbar 
+             Begin Page Content 
+            <div class="container-fluid">
+
+                 Page Heading 
+                <h1 class="h3 mb-2 text-gray-800">Listes</h1>
+                <p class="mb-4">
+                    DataTables is a third party plugin that is used to generate the demo table below.
+                    For more information about DataTables, please visit the
+                    <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.
+                </p>
+
+                 DataTales Example 
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Catégories</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Html.DisplayNameFor(model => model.IdCateg)</th>
+                                        <th>Html.DisplayNameFor(model => model.Designation)</th>
+                                        <th>Html.DisplayNameFor(model => model.DateAjout)</th>
+                                        <th colspan="2">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    foreach(var item in Model)
+                                    {
+                                        
+                                    
+                                    <tr>
+                                        <td>
+                                            Html.DisplayFor(modelItem => item.IdCateg)
+                                        </td>
+                                        <td>
+                                            Html.DisplayFor(modelItem => item.Designation)
+                                        </td>
+                                        <td>
+                                            Html.DisplayFor(modelItem => item.DateAjout)
+                                        </td>
+                                        <td>
+                                                <a asp-action="ModifierCategorie" asp-route-id="item.IdCateg" class="btn btn-info btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-edit"></i>
+                                                </span>
+                                                <span class="text">Modifier</span>
+                                            </a>
+                                        </td>
+                                        <td>
+                                                <a asp-action="SupprimerCategorie" asp-route-id="item.IdCateg" class="btn btn-danger btn-icon-split">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-trash"></i>
+                                                </span>
+                                                <span class="text">supprimer</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+             /.container-fluid 
+
+        </div>
+         End of Main Content 
+         Footer 
+        @Html.Partial("_Footer")
+         End of Footer 
+
+    </div>
+     End of Content Wrapper 
+
+</div>*@
+
+

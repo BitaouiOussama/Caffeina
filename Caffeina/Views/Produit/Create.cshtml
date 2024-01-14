@@ -1,0 +1,98 @@
+@model Caffeina.Models.Produit
+
+@{
+    ViewData["Title"] = "Ajouter produit";
+    Layout = "_layoutadmine";
+}
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    @Html.Partial("_Navbar")
+    <!-- End of Sidebar -->
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Topbar -->
+            @Html.Partial("_Topbar")
+            <!-- End of Topbar -->
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Ajouter - Produit</h1>
+                </div>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="NomProduit" class="control-label"></label>
+                            <input asp-for="NomProduit" class="form-control" />
+                            <span asp-validation-for="NomProduit" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label"></label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="SourceImage" class="control-label"></label>
+                            <input type="file" asp-for="SourceImage" class="form-control-file" />
+                            <span asp-validation-for="SourceImage" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Prix" class="control-label"></label>
+                            <input asp-for="Prix" class="form-control" />
+                            <span asp-validation-for="Prix" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Stock" class="control-label"></label>
+                            <input asp-for="Stock" class="form-control" />
+                            <span asp-validation-for="Stock" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="IdCategorie" class="control-label"></label>
+                            <select asp-for="IdCategorie" class="form-control" asp-items="ViewBag.IdCategorie"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Ajouter" data-mdb-input-init class="btn btn-admin btn-block mb-4" />
+                    </div>
+                </form>
+                <div>
+                    <a asp-action="Index" class="a-lien">Voir list</a>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+        <!-- Footer -->
+        @Html.Partial("_Footer")
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+
