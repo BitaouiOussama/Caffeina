@@ -11,10 +11,12 @@ namespace Caffeina.Controllers
     public class AdminController : Controller
     {
         private readonly ILogger<AdminController> _logger;
+        private readonly caffeinaContext _context;
 
-        public AdminController(ILogger<AdminController> logger)
+        public AdminController(ILogger<AdminController> logger, caffeinaContext context)
         {
             _logger = logger;
+            _context = context;
         }
         //private readonly DataDbContext _context;
         
@@ -28,12 +30,6 @@ namespace Caffeina.Controllers
         [Route("/admin")]
         public  IActionResult Index()
         {
-            //userConnecter = new Utilisateur { IdUtilisateur = userConnecter.IdUtilisateur, Nom = userConnecter.Nom, Email = userConnecter.Email, MotDePasse = userConnecter.MotDePasse };
-            if (TempData.ContainsKey("MyObject") && TempData["MyObject"] is Utilisateur user)
-            {
-                // Utilisez myObject comme nécessaire
-                ViewData["MyObject"] = user;
-            }
             return View();
         }
         

@@ -1,4 +1,5 @@
-﻿    <!-- Page Header Start -->
+﻿@model Caffeina.Models.Categorie
+    <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
         <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
             <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Produit</h1>
@@ -20,19 +21,21 @@
                 <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">DÉCOUVREZ NOTRE LARGE GAMME DE CAFÉ SOUS TOUTES SES FORMES AINSI QU’UNE SÉLECTION DE NOS AUTRES PRODUITS.</h4>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="hovereffect">
-                        <div class="card mb-5 box-shadow">
-                            <img class="img-responsive" src="../img/Masque-de-nuit-au-sucre-brun.jpeg" alt="" style="height: 310px; width: 100%; display: block;">
-                            <div class="overlay">
-                                <a class="info" asp-controller="Home" asp-action="Produit">CAFÉ EN GRAINS</a>
+                @foreach (Categorie categorie in ViewBag.categories)
+                {
+                    <div class="col-md-4">
+                        <div class="hovereffect">
+                            <div class="card mb-5 box-shadow">
+                                <img class="img-responsive" src="../img/@categorie.SourceImage" alt="@categorie.SourceImage" style="height: 310px; width: 100%; display: block;">
+                                <div class="overlay">
+                                    <a class="info" asp-controller="Home" asp-action="Produit" asp-route-id="@categorie.IdCategorie">@categorie.Designation</a>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
-
-                <div class="col-md-4">
+                }
+                @*<div class="col-md-4">
                     <div class="hovereffect">
                         <div class="card mb-5 box-shadow">
                             <img class="img-responsive" src="../img/nuit-au-sucre.jpeg" alt="" style="height: 310px; width: 100%; display: block;">
@@ -53,7 +56,7 @@
                         </div>
 
                     </div>
-                </div>
+                </div>*@
                 <div class="col-md-4">
                     <div class="hovereffect">
                         <div class="card mb-5 box-shadow">

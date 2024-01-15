@@ -145,6 +145,7 @@ html {
 
 .img-thumbnail {
     border: none;
+    height: 300px;
 }
 
 .card {

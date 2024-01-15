@@ -1,5 +1,6 @@
 ﻿using Caffeina.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Caffeina.Controllers
@@ -7,10 +8,12 @@ namespace Caffeina.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly caffeinaContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, caffeinaContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         
@@ -36,14 +39,16 @@ namespace Caffeina.Controllers
             return View();
         }
 
-        [Route("/pr")]
-        public IActionResult Produit()
+        [Route("/produit/{id}")]
+        public IActionResult Produit(int id)
         {
+            ViewBag.produits = _context.Produits.Where(p=>p.IdCategorie==id);
             return View();
         }
         [Route("/produit")]
         public IActionResult Categorie()
         {
+            ViewBag.categories = _context.Categories.ToList();
             return View();
         }
 
