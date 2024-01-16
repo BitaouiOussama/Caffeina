@@ -47,8 +47,12 @@ namespace Caffeina
             {
                 return NotFound();
             }
-
+            //userConnecter = new Utilisateur { IdUtilisateur = user.IdUtilisateur, Nom=user.Nom, Email= user.Email, MotDePasse= user.MotDePasse };
+            //TempData["MyObject"] = user;
+            // new { userConnecter=user }
+            //return RedirectToAction(nameof(Index), "Admin");
             return RedirectToAction(nameof(Index));
+            //return View(utilisateur);
         }
         // GET: Utilisateur/Details/5
         public async Task<IActionResult> Details(int? id)

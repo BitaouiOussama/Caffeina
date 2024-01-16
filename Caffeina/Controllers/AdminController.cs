@@ -30,6 +30,7 @@ namespace Caffeina.Controllers
         [Route("/admin")]
         public  IActionResult Index()
         {
+            //userConnecter = new Utilisateur { IdUtilisateur = userConnecter.IdUtilisateur, Nom = userConnecter.Nom, Email = userConnecter.Email, MotDePasse = userConnecter.MotDePasse };
             return View();
         }
         
